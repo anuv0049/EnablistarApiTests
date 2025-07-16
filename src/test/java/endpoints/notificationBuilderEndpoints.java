@@ -1,7 +1,7 @@
 package endpoints;
 
-public class NotificationBuilderEndpoints {
-    public static final String NOTIFICATION_BASE_URL = "notificationbuilder/";
+public class notificationBuilderEndpoints {
+    public static final String NOTIFICATION_BASE_URL = "http://devapi.enablistar.com/notificationbuilder/v1/notification/";
     public static final String createTransactionMasterAPI = "v1/notification/create";
     public static final String getAllTransactionsDashboardAPI= "v1/notification/get-all-transaction";
     public static final String getTransactionByIdAPI= "api/v1/Notification/get-transaction-detail-by-Id/";

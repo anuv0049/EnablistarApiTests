@@ -1,5 +1,4 @@
-package config;
-
+package utils;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -10,7 +9,7 @@ public class ConfigManager {
 
     static {
         try {
-            FileInputStream fis = new FileInputStream("src/test/resources/envConfig.properties");
+            FileInputStream fis = new FileInputStream("src/test/java/resources/DevEnvConfig.properties");
             props.load(fis);
         } catch (IOException e) {
             throw new RuntimeException("Failed to load config.properties file", e);

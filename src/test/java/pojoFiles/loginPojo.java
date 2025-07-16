@@ -1,19 +1,23 @@
-package POJO.Login;
+package pojoFiles;
 
-public class LoginRequest {
+
+
+public class loginPojo {
+
     private String username;
     private String password;
 
-    // No-argument constructor (needed for JSON serialization)
-    public LoginRequest() {}
+    // Default no-arg constructor
+    public loginPojo() {
+    }
 
-    // Constructor to initialize fields
-    public LoginRequest(String username, String password) {
+    // Parameterized constructor
+    public loginPojo(String username, String password) {
         this.username = username;
         this.password = password;
     }
 
-    // Getter and setter for username
+    // Getter and Setter for username
     public String getUsername() {
         return username;
     }
@@ -21,7 +25,7 @@ public class LoginRequest {
         this.username = username;
     }
 
-    // Getter and setter for password
+    // Getter and Setter for password
     public String getPassword() {
         return password;
     }
