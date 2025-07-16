@@ -12,7 +12,7 @@ public class notificationBuilderEndpoints {
     public static final String getTransactionDetailsByIdAPI= "api/v1/notification/get-transaction-detail-by-Id/";
     public static final String getAttributeMasterAPI= "api/v1/notification/get-all-attribute";
     public static final String publishAPI= "v1/notification/publish/";
-    public static final String getAllTransactionDetailsAPI= "get-all-transaction-detail";
+    public static final String getAllTransactionDetailsAPI= "get-all-transaction";
     public static final String updateTransactionDetailsAPI= "Notification/update-transaction-detail/";
 
 }

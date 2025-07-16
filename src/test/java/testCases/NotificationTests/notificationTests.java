@@ -18,4 +18,5 @@ public class notificationTests {
         System.out.println("Response:\n" + response.asPrettyString());
         Assert.assertEquals(response.getStatusCode(), 200);
     }
+
 }
