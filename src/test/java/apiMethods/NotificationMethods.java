@@ -1,21 +1,102 @@
 package apiMethods;
 
-
 import endpoints.notificationBuilderEndpoints;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import utils.ConfigManager;
+import utils.ExtentTestManager;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 import static io.restassured.RestAssured.given;
 
 public class NotificationMethods {
-String token1="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IkhhcmRpa19UX0xPIiwidXNlcklkIjoiMDE5NDhkZmYtMDhhYi03ZmZiLTkxMzgtNTdiZmI3OTBkNjhlIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoie1wiVXNlclJvbGVzXCI6e1wiMDE5NDhkZmYtMDdlOC03ZTBiLWE4MzYtOWU0YzZhOWU3MmY5XCI6XCJMb2FuIE9mZmljZXJcIn0sXCJUYXNrSWRzXCI6W1wiMDQ5OGZmZDktYmRkYy00MGEyLTg5ZmEtZjI1MWNmNGE3MWE1XCIsXCI0ZmFhOTZjYi1mY2Q3LTRmNjAtOTc1Yy05ODgxMGIyZWQzZGJcIixcIjgwMDkwMzNkLTE1OTMtNDdlMi1iOTVlLWZjMjA3NjgwNWQ1NlwiLFwiYjYzZDc5MGItNDM0Ni00ZjIxLTllNjYtNTc4ODc5ZGFjNGU4XCIsXCJiZGI5Y2VhZi0yZTk5LTRlODEtYTVkOC1jNzMxMzQzNjk4ZGNcIixcImY4YjkzYjVkLTZhMGMtNDdlOC05MTJiLTA0MjkwNTU4ODk0ZVwiLFwiZmQzYTI4ZDMtNTFkMi00MGFmLTkxNDEtYTgyZTZjNGZmMzdmXCJdfSIsImV4cCI6MTc0NDM1MTc2NiwiaXNzIjoiRW5hYmxpc3RhciIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjcwNjEvIn0.3Hd_mcMPo0ZbX-Be3D4rBMUb0l2Syye6F2TdZ5KfCoA";
-    public Response getNotifications(String token) {
-        return given()
-                .header("Authorization", "Bearer " + token1)
+
+    // Create Transactional Notification
+    public Response createTransactionalNotification(String token) {
+
+        //String token = ConfigManager.getProperty("notificationAuthToken");
+        String moduleId = "842e9cd6-7014-4c04-a241-59142ca001b4";
+        String name = "Loan Approval QA - " + UUID.randomUUID().toString().substring(0, 8);
+        String description = "Generated at " + System.currentTimeMillis();
+        Map<String, Object> payload = new HashMap<>();
+        payload.put("notificationName", name);
+        payload.put("description", description);
+        payload.put("moduleId", moduleId);
+
+        ExtentTestManager.getTest().info("Creating notification with payload: " + payload);
+
+        Response response = given()
+                .header("Authorization", "Bearer " + token)
+                .contentType(ContentType.JSON)
+                .body(payload)
                 .when()
-                .get(notificationBuilderEndpoints.NOTIFICATION_BASE_URL+notificationBuilderEndpoints.getAllTransactionDetailsAPI)
+                .post(notificationBuilderEndpoints.NOTIFICATION_BASE_URL + notificationBuilderEndpoints.createTransactionMasterAPI)
                 .then()
                 .extract()
                 .response();
+
+        ExtentTestManager.getTest().info("Response: " + response.asPrettyString());
+        return response;
+    }
+
+    // Get Notification by ID
+    public Response getNotificationById(String token, String notificationId) {
+        String url = notificationBuilderEndpoints.NOTIFICATION_BASE_URL +
+                notificationBuilderEndpoints.getTransactionByIdAPI + "/" + notificationId;
+
+        ExtentTestManager.getTest().info("Fetching notification with ID: " + notificationId);
+
+        Response response = given()
+                .header("Authorization", "Bearer " + token)
+                .contentType(ContentType.JSON)
+                .when()
+                .post(url)
+                .then()
+                .extract()
+                .response();
+
+        ExtentTestManager.getTest().info("Response: " + response.asPrettyString());
+        return response;
+    }
+
+    // Get All Notifications
+    public Response getAllNotifications(String token) {
+        String url = notificationBuilderEndpoints.NOTIFICATION_BASE_URL +
+                notificationBuilderEndpoints.getAllTransactionDetailsAPI;
+
+        ExtentTestManager.getTest().info("Fetching all notifications");
+
+        Response response = given()
+                .header("Authorization", "Bearer " + token)
+                .when()
+                .get(url)
+                .then()
+                .extract()
+                .response();
+
+        ExtentTestManager.getTest().info("Response: " + response.asPrettyString());
+        return response;
+    }
+
+    // Publish Notification (if applicable)
+    public Response publish(String token, String notificationId) {
+        String url = notificationBuilderEndpoints.NOTIFICATION_BASE_URL +
+                "/notifications/publish/" + notificationId;
+
+        ExtentTestManager.getTest().info("Publishing notification with ID: " + notificationId);
+
+        Response response = given()
+                .header("Authorization", "Bearer " + token)
+                .when()
+                .post(url)
+                .then()
+                .extract()
+                .response();
+
+        ExtentTestManager.getTest().info("Response: " + response.asPrettyString());
+        return response;
     }
 }
