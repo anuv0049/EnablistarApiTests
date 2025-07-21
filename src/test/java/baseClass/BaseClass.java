@@ -6,6 +6,7 @@ import io.restassured.response.Response;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
+import utils.ConfigManager;
 import utils.Constants;
 import utils.ExtentManager;
 import utils.ExtentTestManager;
@@ -26,14 +27,14 @@ public class BaseClass {
 
     @BeforeClass
     public void setup() {
-        RestAssured.baseURI = "http://devapi.enablistar.com/";
-        // Or use: RestAssured.baseURI = ConfigManager.getProperty("baseURI");
+
+         RestAssured.baseURI = ConfigManager.getProperty("devBaseURI");
 
         Map<String, String> loginPayload = new HashMap<>();
         loginPayload.put("Username", Constants.LOGIN_USERNAME);
         loginPayload.put("Password", Constants.LOGIN_PASSWORD);
 
-        LoginMethods loginMethods = new LoginMethods();
+    /*    LoginMethods loginMethods = new LoginMethods();
         Response response = loginMethods.loginApi(loginPayload);
 
         if (response.getStatusCode() == 200) {
@@ -41,7 +42,7 @@ public class BaseClass {
             System.out.println("Login successful. Access token: " + accessToken);
         } else {
             throw new RuntimeException("Login failed. Status Code: " + response.getStatusCode());
-        }
+        }   */
     }
 
     @BeforeMethod

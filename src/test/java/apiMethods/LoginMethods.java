@@ -1,5 +1,6 @@
 
 package apiMethods;
+import endpoints.loginEndpoints;
 import io.restassured.response.Response;
 
 import java.util.Map;
@@ -15,7 +16,7 @@ public class LoginMethods {
                 .contentType("application/json")
                 .body(payload)
                 .when()
-                .post("authentication/v1/authentication/login")  // adjust path or prepend base URI if needed
+                .post(loginEndpoints.LOGIN_API)
                 .then()
                 .log().all()
                 .extract()

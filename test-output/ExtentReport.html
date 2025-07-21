@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">API Test Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Jul 17, 2025 01:37:35 PM</span></a>
+<a href="#"><span class="badge badge-primary">Jul 21, 2025 11:56:52 AM</span></a>
 </li>
 </ul>
 </div>
@@ -45,6 +45,11 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
@@ -66,6 +71,8 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -73,6 +80,2276 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
+        <li class="test-item"  status="fail" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">TC01: Create Transactional Notification</p>
+            <p class="text-sm">
+              <span>11:56:54 AM</span> / <span>00:00:03:560</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">TC01: Create Transactional Notification</h5>
+<span class='badge badge-success'>07.21.2025 11:56:54 AM</span>
+<span class='badge badge-danger'>07.21.2025 11:56:57 AM</span>
+<span class='badge badge-default'>00:00:03:560</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Executing test: TC01: Create Transactional Notification</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>11:56:54 AM</td>
+        <td>
+          Creating notification with payload: {description=Generated at 1753079214151, moduleId=842e9cd6-7014-4c04-a241-59142ca001b4, notificationName=Loan Approval QA - a93da283}
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>11:56:57 AM</td>
+        <td>
+          Response: {
+    "notificationName": [
+        "Special character is not allowed in notification name. "
+    ]
+}
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>11:56:57 AM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.AssertionError: Expected status code 200 on creation expected [200] but found [400]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1431)
+	at org.testng.Assert.assertEquals(Assert.java:1395)
+	at testCases.NotificationTests.NotificationTests.createTransactionalNotificationTest(NotificationTests.java:25)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="2"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">TC04: Get All Notifications</p>
+            <p class="text-sm">
+              <span>11:56:58 AM</span> / <span>00:00:00:288</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC04: Get All Notifications</h5>
+<span class='badge badge-success'>07.21.2025 11:56:58 AM</span>
+<span class='badge badge-danger'>07.21.2025 11:56:58 AM</span>
+<span class='badge badge-default'>00:00:00:288</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Executing test: TC04: Get All Notifications</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>11:56:58 AM</td>
+        <td>
+          Fetching all notifications
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>11:56:58 AM</td>
+        <td>
+          Response: [
+    {
+        "id": "b6d32be0-db18-482f-bac8-034d2cc42d81",
+        "notificationName": "Loan approved",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "591eace3-ea19-42a5-b6c8-e756c08f45d9",
+        "templateName": "Loan Template - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            },
+            {
+                "channelId": "dde8c72f-b99a-4558-ac21-232d200e43c6",
+                "channelName": "Chat (Whatsapp)",
+                "valueInfo": "",
+                "description": "This template will be used for sending Whatsapp notifications."
+            }
+        ],
+        "statusId": 4,
+        "statusName": "Published",
+        "createdOn": "2025-05-22T05:47:29.6386",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "f25e1cdf-7f41-40bf-a862-93e19aa5b105",
+        "notificationName": "Loan Approval 1",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": null,
+        "templateName": "",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-04-17T06:58:44.942415",
+        "createdBy": "00000000-0000-0000-0000-000000000000"
+    },
+    {
+        "id": "0f12ec81-10a6-4c20-a75f-2188d1bc36c7",
+        "notificationName": "Hello TransHsjiadh",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": null,
+        "templateName": "",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-04-17T07:03:08.161255",
+        "createdBy": "00000000-0000-0000-0000-000000000000"
+    },
+    {
+        "id": "0482bcca-e1d1-4cb7-9c49-28ad3abe806e",
+        "notificationName": "Hello Notification",
+        "moduleId": "3ff81553-0e64-47ff-9d77-9fa62b315f8e",
+        "templateId": null,
+        "templateName": "",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-04-17T07:08:54.126138",
+        "createdBy": "00000000-0000-0000-0000-000000000000"
+    },
+    {
+        "id": "08f3d4df-c45b-4997-8f8c-a02d09607ca7",
+        "notificationName": "Send Loan Application Review",
+        "moduleId": "e26e17da-b1e8-4be9-a954-536f4b2be2a2",
+        "templateId": "f244ec8a-cfa8-4747-b1f2-c2cbb0d00cfb",
+        "templateName": "Loan Application Review - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 4,
+        "statusName": "Published",
+        "createdOn": "2025-04-24T11:35:45.755529",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "de16da76-db41-4d63-a6e9-cab856cf96ed",
+        "notificationName": "Hello",
+        "moduleId": "3ff81553-0e64-47ff-9d77-9fa62b315f8e",
+        "templateId": "48588312-1648-490a-85d4-8008afa9ab79",
+        "templateName": "",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            },
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a20",
+                "channelName": "SMS",
+                "valueInfo": "",
+                "description": "This template will be used for sending SMS notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-04-17T07:11:19.558082",
+        "createdBy": "00000000-0000-0000-0000-000000000000"
+    },
+    {
+        "id": "2bfb11e5-d972-470a-a16f-c144d81d15fa",
+        "notificationName": "UI temp",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "48588312-1648-490a-85d4-8008afa9ab79",
+        "templateName": "",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-04-15T11:45:46.957201",
+        "createdBy": "00000000-0000-0000-0000-000000000000"
+    },
+    {
+        "id": "65d738bd-267a-4309-97d6-c4371f434ece",
+        "notificationName": "Notification template testing",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": "fca03134-e1ad-4516-91d3-316fcebda058",
+        "templateName": "Notification Base Template - External",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            },
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a20",
+                "channelName": "SMS",
+                "valueInfo": "",
+                "description": "This template will be used for sending SMS notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-04-18T05:38:06.160995",
+        "createdBy": "00000000-0000-0000-0000-000000000000"
+    },
+    {
+        "id": "0330acf6-b682-45a2-a283-a3c5df81f956",
+        "notificationName": "abc template testing",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": "fca03134-e1ad-4516-91d3-316fcebda058",
+        "templateName": "Notification Base Template - External",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            },
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a20",
+                "channelName": "SMS",
+                "valueInfo": "",
+                "description": "This template will be used for sending SMS notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-04-22T11:57:01.083615",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "22513dcf-63bb-4c39-9e52-0e566355998b",
+        "notificationName": "Today 22",
+        "moduleId": "3ff81553-0e64-47ff-9d77-9fa62b315f8e",
+        "templateId": null,
+        "templateName": "",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-04-22T11:58:10.240998",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "77b7e27f-7667-4c4f-aedd-743dc3741cb4",
+        "notificationName": "new template testing",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": null,
+        "templateName": "",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-04-22T12:01:49.990272",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "356fed04-8a0e-4304-b805-06dcb2f80a40",
+        "notificationName": "sadsad",
+        "moduleId": "3ff81553-0e64-47ff-9d77-9fa62b315f8e",
+        "templateId": null,
+        "templateName": "",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-04-22T12:38:46.012225",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "03407ef4-4eac-4d18-a634-816a9308b843",
+        "notificationName": "Today 154",
+        "moduleId": "3ff81553-0e64-47ff-9d77-9fa62b315f8e",
+        "templateId": "77d6f705-fda6-4bf2-94dc-73f17f7d407b",
+        "templateName": "Loan application - test - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            },
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a30",
+                "channelName": "Push",
+                "valueInfo": "",
+                "description": "This template will be used for sending Push notifications on Android and IOS."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-04-22T12:10:05.45309",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "73d4c85f-af1f-4408-996e-b59b54ae97bb",
+        "notificationName": "template testing 1122",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": "9cfc7220-772c-4286-8b49-9e51a517a359",
+        "templateName": "Login Template - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a20",
+                "channelName": "SMS",
+                "valueInfo": "",
+                "description": "This template will be used for sending SMS notifications."
+            },
+            {
+                "channelId": "dde8c72f-b99a-4558-ac21-232d200e43c6",
+                "channelName": "Chat (Whatsapp)",
+                "valueInfo": "",
+                "description": "This template will be used for sending Whatsapp notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-04-23T06:20:52.167619",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "e6ae3465-aedd-42a8-9415-0044d58bb620",
+        "notificationName": "New notification details",
+        "moduleId": "3ff81553-0e64-47ff-9d77-9fa62b315f8e",
+        "templateId": "dcbce88c-2a2f-4916-ba3d-51df00545ca1",
+        "templateName": "Internal Template - clone - Internal",
+        "channels": [
+            {
+                "channelId": "633354d3-5f5e-4864-8501-5463dfbf996b",
+                "channelName": "In-App",
+                "valueInfo": "",
+                "description": "This template will be used for sending In-App Inbox notifications."
+            },
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-04-23T11:58:16.443373",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "41b2121b-16fb-48f9-89d2-ba6e16ff5ba7",
+        "notificationName": "Today  24",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "ad0ce92b-4506-4ea0-bb53-17938d68a553",
+        "templateName": "New template details - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            },
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a20",
+                "channelName": "SMS",
+                "valueInfo": "",
+                "description": "This template will be used for sending SMS notifications."
+            },
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a30",
+                "channelName": "Push",
+                "valueInfo": "",
+                "description": "This template will be used for sending Push notifications on Android and IOS."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-04-24T07:07:04.428766",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "8186b4d1-7b42-4709-a3e8-d74f178b6c02",
+        "notificationName": "Transaction notification ",
+        "moduleId": "3ff81553-0e64-47ff-9d77-9fa62b315f8e",
+        "templateId": null,
+        "templateName": "",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-04-24T07:40:43.120353",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "5e4f6a77-89ed-486a-be89-017cf97f8ccf",
+        "notificationName": "Today 24-5",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": null,
+        "templateName": "",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-04-24T08:20:17.350211",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "4d4f1724-722e-4771-b2a0-2c60faf0ae26",
+        "notificationName": "AS TXN",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": "ad0ce92b-4506-4ea0-bb53-17938d68a553",
+        "templateName": "New template details - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            },
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a20",
+                "channelName": "SMS",
+                "valueInfo": "",
+                "description": "This template will be used for sending SMS notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-04-24T08:36:25.491678",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "e5ee179c-d050-4efb-886d-b3ec9480f49f",
+        "notificationName": "Notification AK",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": "89d0dc45-640e-42fb-b3ab-708ce30efada",
+        "templateName": "Today 24 - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            },
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a20",
+                "channelName": "SMS",
+                "valueInfo": "",
+                "description": "This template will be used for sending SMS notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-04-24T10:12:14.275793",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "b3982620-22de-4a33-9ada-a89b442207cd",
+        "notificationName": "Notification Narendra",
+        "moduleId": "e26e17da-b1e8-4be9-a954-536f4b2be2a2",
+        "templateId": "f244ec8a-cfa8-4747-b1f2-c2cbb0d00cfb",
+        "templateName": "Loan Application Review - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            },
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a20",
+                "channelName": "SMS",
+                "valueInfo": "",
+                "description": "This template will be used for sending SMS notifications."
+            }
+        ],
+        "statusId": 4,
+        "statusName": "Published",
+        "createdOn": "2025-04-24T12:40:01.110535",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "7572d227-c954-4fc8-96e9-ce3690e44a66",
+        "notificationName": "Today 19",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "f244ec8a-cfa8-4747-b1f2-c2cbb0d00cfb",
+        "templateName": "Loan Application Review - Internal",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-04-25T09:08:09.453384",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "61c4c384-e305-42ac-a8b7-6ab7c3397e9a",
+        "notificationName": "Loan application",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": null,
+        "templateName": "",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-04-30T09:50:51.547135",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "40ee6842-63ee-4257-b317-3a7ec668876f",
+        "notificationName": "today 25",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "f244ec8a-cfa8-4747-b1f2-c2cbb0d00cfb",
+        "templateName": "Loan Application Review - Internal",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-04-25T04:00:49.339658",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "bc113c91-cf86-4643-b5c6-d88724679882",
+        "notificationName": "Loan App Submission - NV",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "633a1049-26a9-4b67-99f7-4724ee478f5a",
+        "templateName": "Loan App Submission - NV - Internal",
+        "channels": [
+            
+        ],
+        "statusId": 4,
+        "statusName": "Published",
+        "createdOn": "2025-04-29T05:10:54.687225",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "c19eff95-0585-4a7e-9799-1621d0502d51",
+        "notificationName": "test",
+        "moduleId": "3ff81553-0e64-47ff-9d77-9fa62b315f8e",
+        "templateId": "f244ec8a-cfa8-4747-b1f2-c2cbb0d00cfb",
+        "templateName": "Loan Application Review - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a20",
+                "channelName": "SMS",
+                "valueInfo": "",
+                "description": "This template will be used for sending SMS notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-05-02T04:50:12.545368",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "a4ae43b3-2d58-49fc-84cc-f49307e52cde",
+        "notificationName": "test 2",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "b806dc53-0154-4e1f-8c71-08a3150b9fea",
+        "templateName": "Login Template - Clone - 21 - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-05-02T05:13:15.04276",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "e62b4ec4-421b-44d6-9103-599db10f1ada",
+        "notificationName": "Application Submission",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": "899180a2-b195-4fc5-9917-86a3782f0134",
+        "templateName": "Loan Application Submission - Internal",
+        "channels": [
+            {
+                "channelId": "633354d3-5f5e-4864-8501-5463dfbf996b",
+                "channelName": "In-App",
+                "valueInfo": "",
+                "description": "This template will be used for sending In-App Inbox notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-05-12T07:47:30.254047",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "c1cec13e-7aa0-46b9-92b4-5c5a3ba84cbc",
+        "notificationName": "Otp for validation",
+        "moduleId": "3ff81553-0e64-47ff-9d77-9fa62b315f8e",
+        "templateId": "9cfc7220-772c-4286-8b49-9e51a517a359",
+        "templateName": "Login Template - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            },
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a20",
+                "channelName": "SMS",
+                "valueInfo": "",
+                "description": "This template will be used for sending SMS notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-04-23T12:00:35.001352",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "b876f25d-7a80-439e-b1aa-b509d50187c0",
+        "notificationName": "loan",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "633a1049-26a9-4b67-99f7-4724ee478f5a",
+        "templateName": "Loan App Submission - NV - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            },
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a20",
+                "channelName": "SMS",
+                "valueInfo": "",
+                "description": "This template will be used for sending SMS notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-05-02T07:38:35.344294",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "76ad93a1-e620-4dcb-a4fc-e73f8062656f",
+        "notificationName": "test notification",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "f4992f94-0655-4d7c-8b1e-7fc36ded1b4d",
+        "templateName": "Otp Validation template - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            },
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a20",
+                "channelName": "SMS",
+                "valueInfo": "",
+                "description": "This template will be used for sending SMS notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-05-15T04:12:50.030606",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "aae96c8b-d4c3-419e-b073-59fb8740fef8",
+        "notificationName": "Loan Agreement Letter",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": "16e29d59-154a-4c5d-a334-e79ea6017e10",
+        "templateName": "hello - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 4,
+        "statusName": "Published",
+        "createdOn": "2025-05-26T07:09:09.92515",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "63df9022-d70a-475f-a8cb-648d16e41860",
+        "notificationName": "Loan OTP Testing Notification",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": "16e29d59-154a-4c5d-a334-e79ea6017e10",
+        "templateName": "hello - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 4,
+        "statusName": "Published",
+        "createdOn": "2025-05-30T11:23:11.214209",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "6ef2fd57-c17c-4ff8-a653-10170d964b26",
+        "notificationName": "sdsadas",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "5d209706-afe6-4f17-8ecb-cfa24cb0426c",
+        "templateName": "Your Loan Application is Under Final Review - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-02T07:29:00.976948",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "1257ee2a-2b2e-4b13-8e66-a1bbedbf7ac9",
+        "notificationName": "IMP Loan Application is Under Credit Evaluation",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "17166f2d-0b62-43aa-937e-c487efbf745f",
+        "templateName": "IMP Loan Application is Under Credit Evaluation - External",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-04T09:54:13.66555",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "5003706e-77fe-429b-9c20-8d636920af7b",
+        "notificationName": "dasdsa",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "6a334aff-c2e8-4bcd-99a2-eb71f436e914",
+        "templateName": "IMP Reminder Incomplete Loan Application - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-04T08:51:58.097511",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "38158b2f-0bf5-4950-9342-49f86b16131a",
+        "notificationName": "IMP Escalation Final Sanction Still Pending ",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "74bb971e-513f-42c7-a2b8-c7d87cfdbbd7",
+        "templateName": "IMP Escalation Final Sanction Still Pending  - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-04T09:06:55.930028",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "335bd696-8a88-4c14-b3d6-ed9b8b7e0311",
+        "notificationName": "IMP Deviation Approval Required",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "f86fc5be-d031-4791-bb44-a1e6bf6e1c42",
+        "templateName": "IMP Deviation Approval Required - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-04T09:58:27.711831",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "44649c7f-d8d9-488d-9566-6a78e014a36c",
+        "notificationName": "IMP Reminder Incomplete Loan Application",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "6a334aff-c2e8-4bcd-99a2-eb71f436e914",
+        "templateName": "IMP Reminder Incomplete Loan Application - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-04T09:25:04.327482",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "827eb9a3-49c3-41af-87af-f2d018b8fb5b",
+        "notificationName": "IMP Escalation Underwriting Overdue",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "95f3c544-d734-4ad8-a862-5444d5811dae",
+        "templateName": "IMP Escalation Underwriting Overdue - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-04T09:26:11.790684",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "0e0a8723-4cd5-4ba7-8b3b-ae150a50dd14",
+        "notificationName": "IMP Escalation Deviation Approval Delayed",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "de1a6e21-46eb-4012-9cfa-7a6987fc5254",
+        "templateName": "IMP Escalation Deviation Approval Delayed  - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-04T09:27:25.310623",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "821de33e-ebea-48ef-905f-3dd20aeb1fce",
+        "notificationName": "IMP Escalation Credit Assessment Delayed",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "d9bd95b5-d988-4cfa-b6a6-5450e3cf8af7",
+        "templateName": "IMP Escalation Credit Assessment Delayed  - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-04T09:28:17.64901",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "9f1bbaf3-0cf2-4593-9ccb-09251a7836b8",
+        "notificationName": "IMP Escalation Incomplete Loan Application",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "adf4d1a4-4276-4963-8930-c2705e897e49",
+        "templateName": "IMP Escalation Incomplete Loan Application  - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-04T09:33:31.197057",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "3a830f56-6fa4-4f88-8032-a9192e395f1a",
+        "notificationName": "IMP Final Sanction Decision Pending",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "d0300da3-463c-429c-8e3f-1317202bcfd9",
+        "templateName": "IMP Final Sanction Decision Pending  - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-04T09:34:19.547",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "01440d3b-a10f-49d2-b24f-89c3cb185b25",
+        "notificationName": "IMP Loan Application Submitted",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "a9c77140-fcf1-4adb-936c-32072d9091a6",
+        "templateName": "IMP Loan Application Submitted - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-04T10:01:27.200281",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "c4caa1d0-ae8f-45eb-b714-b5ed64f79753",
+        "notificationName": "IMP Reminder Underwriting Pending",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "9aec625e-ebf1-4fa8-9f86-1032d2e679db",
+        "templateName": "IMP Reminder Underwriting Pending - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-04T09:35:11.313625",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "88054089-e602-4da2-9961-1f825f21635a",
+        "notificationName": "IMP Reminder Deviation Approval Pending",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "9100895d-aa1f-4761-a7b7-fcf4fd755885",
+        "templateName": "IMP Reminder Deviation Approval Pending - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-04T09:35:58.108187",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "b2872078-fe56-48e6-be5d-6d235ccf8f78",
+        "notificationName": "IMP Deviation application has been approved",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "be22b642-88fb-40ed-9ba1-07014413501b",
+        "templateName": "IMP Deviation has been approved - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-06T05:05:30.060354",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "f0f5420f-3d70-4406-854e-09ad045dc1a2",
+        "notificationName": "IMP Credit Evaluation Pending for Application",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "664a02cb-de98-418e-8d86-4de868370965",
+        "templateName": "IMP Credit Evaluation Pending for Application  - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-04T09:36:57.717748",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "f747b529-5f37-426d-8628-c0ae65b111a6",
+        "notificationName": "IMP Loan Has Been Approved ",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "95a0f11d-fe59-48ea-8556-4d00fa432600",
+        "templateName": "IMP Loan Has Been Approved  - External",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-04T09:38:00.510394",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "0f51d335-8f6c-4fda-85a4-d6160e333ca9",
+        "notificationName": "IMP Sanction Letter Ready ",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "d091b625-dc2f-416e-82ff-667c75ec4d5b",
+        "templateName": "IMP Sanction Letter Ready - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-04T09:39:06.761179",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "3234cd0c-c6b5-4572-bc0e-eeeb8bff707b",
+        "notificationName": "IMP Loan Sanctioned ",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "fda5828a-d416-4db4-9727-0f0f1bd10d58",
+        "templateName": "IMP Loan Sanctioned - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-04T09:40:08.609887",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "ddeebe76-e1b8-4b3f-b802-1dfc98ba62b4",
+        "notificationName": "IMP Loan Application is Under Final Review",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "1e4e14db-8629-4de5-b665-a9b6586b83a2",
+        "templateName": "IMP Loan Application is Under Final Review  - External",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-04T09:40:54.635507",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "5aca1cb7-b412-4c6e-bd02-e3417c37d590",
+        "notificationName": "IMP Underwriting Decision Submitted ",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "7d6a024a-3430-40c1-b96b-7b7050bd6504",
+        "templateName": "IMP Underwriting Decision Submitted  - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-04T09:42:15.288945",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "dd954d55-58ff-42c2-80ac-4d3eabcf3ed4",
+        "notificationName": "dsd",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "1d3c4bbd-7637-4f3b-a370-23ad7e83ae7e",
+        "templateName": "IMP SLA Escalation - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-11T06:11:55.95174",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "4ae80f98-4e5d-4c5d-808c-a8517267da5b",
+        "notificationName": "IMP Low Credit Score Alert",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "1c466251-8079-42c7-9dc6-656b10a8dc15",
+        "templateName": "IMP Low Credit Score Alert  - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-04T09:59:32.777331",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "5ae4ab3f-ddf7-420b-8b49-6b62ede466ad",
+        "notificationName": "notification new",
+        "moduleId": "3ff81553-0e64-47ff-9d77-9fa62b315f8e",
+        "templateId": "1d3c4bbd-7637-4f3b-a370-23ad7e83ae7e",
+        "templateName": "IMP SLA Escalation - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-11T11:11:05.08107",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "37164749-04bb-4b49-a8dc-79df6ccba1e8",
+        "notificationName": "IMP Deviation application has been rejected",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "09a844ad-7732-4254-a736-900e25daa201",
+        "templateName": "IMP Deviation has been rejected - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-06T05:17:09.038106",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "2d4dc6a6-447d-4808-9bba-50c5147c3326",
+        "notificationName": "IMP UW SLA Breached",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "1d3c4bbd-7637-4f3b-a370-23ad7e83ae7e",
+        "templateName": "IMP SLA Escalation - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-11T04:42:30.136059",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "cc40f2c6-7689-48ee-9d76-5ab0fe61521e",
+        "notificationName": "IMP CA SLA Breached",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "1d3c4bbd-7637-4f3b-a370-23ad7e83ae7e",
+        "templateName": "IMP SLA Escalation - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-10T11:58:03.063278",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "76605fbf-74ac-4c44-aff6-bce075e68713",
+        "notificationName": "IMP Application has been rejected",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": null,
+        "templateName": "",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-11T05:07:47.286261",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "e899e7e3-a494-4c98-9abb-237c48d550ea",
+        "notificationName": "notification",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": null,
+        "templateName": "",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-11T11:04:19.51446",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "fe8ccb6d-7eb4-4456-8aa5-a279adcffe6c",
+        "notificationName": "sms email transaction",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "59a94e56-dd90-4b29-b0ae-9b6131a56283",
+        "templateName": "new template abc - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a20",
+                "channelName": "SMS",
+                "valueInfo": "",
+                "description": "This template will be used for sending SMS notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-11T12:04:36.779529",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "c31ba7d2-d6db-4d57-b8b5-31cf8b90e23b",
+        "notificationName": "IMP Credit Appraisal Resubmitted ",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "fad1ec08-cc85-4f91-938d-7785649fcaf3",
+        "templateName": "IMP Credit Appraisal Decision Resubmitted - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 4,
+        "statusName": "Published",
+        "createdOn": "2025-06-11T12:05:59.066585",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "4386bf0b-0144-4451-b196-49bb1a5ad53c",
+        "notificationName": "IMP Credit Appraisal Submitted ",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "36ec622d-0ddb-4fe3-8fff-f89564d0bec5",
+        "templateName": "IMP Credit Appraisal Decision Submitted - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 4,
+        "statusName": "Published",
+        "createdOn": "2025-06-11T12:08:35.807787",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "343c4cf8-5231-4531-bb29-d42abac36454",
+        "notificationName": "IMP Underwriting Decision Resubmitted ",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "e77bbb94-1c1f-43c9-a494-a67b23b98ccd",
+        "templateName": "IMP Underwriting Decision Resubmitted - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 4,
+        "statusName": "Published",
+        "createdOn": "2025-06-11T12:09:27.559598",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "06ba8960-46a1-4981-b6ba-c076d8793a0f",
+        "notificationName": "notification new template add",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": null,
+        "templateName": "",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-11T12:41:12.658768",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "43545e6b-8e0a-4aac-b559-9db3e66a1072",
+        "notificationName": "June 03 Notification",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "0840e088-c59b-47fc-8ab1-2a1c1d508240",
+        "templateName": "June 03 Template - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 4,
+        "statusName": "Published",
+        "createdOn": "2025-06-03T04:39:47.470138",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "87640ce4-675b-4943-b6bd-fecb953152ef",
+        "notificationName": "IMP Loan Application is Under Credit Evaluation reopen",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "9647be1f-2d56-4633-bab4-ed7dcfc6618d",
+        "templateName": "IMP Loan Application is Under Credit Evaluation reopen - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 4,
+        "statusName": "Published",
+        "createdOn": "2025-06-11T12:19:08.140929",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "6ed110be-d6e4-4b03-be20-e2a20275f32c",
+        "notificationName": "IMP Loan Application is Underwritter ",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "29fdca35-5a4f-4648-ab50-18c656f6013d",
+        "templateName": "IMP Loan Application is Underwritter reopen - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-11T13:18:17.117672",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "265d6a41-1c36-4bf5-8b12-d56ef91b2e8a",
+        "notificationName": "IMP Loan Application is Under Final Review resubmitted",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": null,
+        "templateName": "",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-11T13:25:20.831388",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "bd0bbfda-d631-4b3d-ab2a-fdc58d106212",
+        "notificationName": "IMP Loan Application is Underwritter reopen resubmitted",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "7460e8a4-7dc6-45db-9046-bcbb365192eb",
+        "templateName": "IMP Loan Application is Underwritter reopen resubmitted - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-11T13:31:05.493032",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "d398f90e-aa53-4916-9436-c4d3bc6de76c",
+        "notificationName": "Loan Application Submitted",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": null,
+        "templateName": "",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-12T11:38:57.184618",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "3cedac93-7f3f-4e9c-b173-49d4b046902e",
+        "notificationName": "temp111",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": null,
+        "templateName": "",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-07-16T06:26:04.557287",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "4e6bc04e-c9fd-4760-8108-950c604edcbd",
+        "notificationName": "loan application check ",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "be9869af-e39b-4f51-9870-75a789357e89",
+        "templateName": "Template A - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-16T13:31:52.302703",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "be7f8a67-07bc-454b-a42a-01967217f5d5",
+        "notificationName": "Loan Approval 17",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "7460e8a4-7dc6-45db-9046-bcbb365192eb",
+        "templateName": "IMP Loan Application is Underwritter reopen resubmitted - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-06-17T07:05:56.828065",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "90895cbc-351b-43ca-86cc-d21f25b47266",
+        "notificationName": "IMP Loan Application Submitted customer",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "942f80df-e0f5-4de0-bb76-30dd19e4a4e0",
+        "templateName": "IMP Loan Application Submitted customer - External",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 4,
+        "statusName": "Published",
+        "createdOn": "2025-06-04T10:00:20.218771",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "515be1bc-9239-479e-959f-542662aa4845",
+        "notificationName": "today 26",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "0778ea76-cce6-43a4-b343-53bca27cfd06",
+        "templateName": "SLA Alert Credit Evaluation Pending for Application ApplicationID - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 4,
+        "statusName": "Published",
+        "createdOn": "2025-06-26T09:22:28.758865",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "05f2a813-6b4c-488f-80de-1ecadf405d64",
+        "notificationName": "Transaction notify",
+        "moduleId": "3ff81553-0e64-47ff-9d77-9fa62b315f8e",
+        "templateId": "0ad2c355-d7cb-4608-8594-e71a2a11135a",
+        "templateName": "abc1 - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            },
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a20",
+                "channelName": "SMS",
+                "valueInfo": "",
+                "description": "This template will be used for sending SMS notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-07-07T08:57:01.581672",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "505fdbc1-095e-49ad-8688-6be7b96634d3",
+        "notificationName": "Loan Approval Transaction1",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": null,
+        "templateName": "",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-07-08T05:28:28.979183",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "98e052f0-a41a-408d-8ed8-90c67b5295b6",
+        "notificationName": "tt",
+        "moduleId": "3ff81553-0e64-47ff-9d77-9fa62b315f8e",
+        "templateId": "00a428cb-ea1a-4826-84bd-e3f25d3ad596",
+        "templateName": "Notification details - Internal",
+        "channels": [
+            {
+                "channelId": "dde8c72f-b99a-4558-ac21-232d200e43c6",
+                "channelName": "Chat (Whatsapp)",
+                "valueInfo": "",
+                "description": "This template will be used for sending Whatsapp notifications."
+            }
+        ],
+        "statusId": 4,
+        "statusName": "Published",
+        "createdOn": "2025-07-15T06:48:57.215764",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "045ca346-5bde-43fe-9fcc-b55a5a443e50",
+        "notificationName": "Test",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": "0778ea76-cce6-43a4-b343-53bca27cfd06",
+        "templateName": "SLA Alert Credit Evaluation Pending for Application ApplicationID - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 4,
+        "statusName": "Published",
+        "createdOn": "2025-07-15T12:15:38.722105",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "9d3c76a9-ef91-4266-bf82-3c8880101ab6",
+        "notificationName": "abc q",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "0c02e9e5-97a1-490f-9d08-3bcef114e268",
+        "templateName": "New Loan Application - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a20",
+                "channelName": "SMS",
+                "valueInfo": "",
+                "description": "This template will be used for sending SMS notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-07-16T07:02:16.638133",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "5bf155d6-fb39-4e68-b209-e1fbd63fc06f",
+        "notificationName": "Loan Approval Transaction1752650592568",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": "7460e8a4-7dc6-45db-9046-bcbb365192eb",
+        "templateName": "IMP Loan Application is Underwritter reopen resubmitted - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-07-16T07:23:12.610743",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "6158d48f-d8c8-43c0-b6af-b6db66ba5431",
+        "notificationName": "Loan Approval Transaction1752654702815",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": "7460e8a4-7dc6-45db-9046-bcbb365192eb",
+        "templateName": "IMP Loan Application is Underwritter reopen resubmitted - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-07-16T08:31:48.250964",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "f6c27ae4-7a87-4f98-9669-3277495d3d7e",
+        "notificationName": "Loan Approval Transaction1752654858526",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": "7460e8a4-7dc6-45db-9046-bcbb365192eb",
+        "templateName": "IMP Loan Application is Underwritter reopen resubmitted - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 4,
+        "statusName": "Published",
+        "createdOn": "2025-07-16T08:34:20.61376",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "cc76ff7c-162e-43ae-ac28-8d998a843d2c",
+        "notificationName": "Loan Approval Transaction1752655340876",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": "7460e8a4-7dc6-45db-9046-bcbb365192eb",
+        "templateName": "IMP Loan Application is Underwritter reopen resubmitted - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 4,
+        "statusName": "Published",
+        "createdOn": "2025-07-16T08:42:22.913634",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "1466311f-4232-45b8-8ced-eb8764eb2d07",
+        "notificationName": "Loan Approval Transaction1752655442331",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": null,
+        "templateName": "",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-07-16T08:44:04.37778",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "17547f17-a8a0-444b-98f9-5968c8158819",
+        "notificationName": "Loan Approval Transaction1752655453156",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": "7460e8a4-7dc6-45db-9046-bcbb365192eb",
+        "templateName": "IMP Loan Application is Underwritter reopen resubmitted - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-07-16T08:44:15.200968",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "ea6e3821-43a4-413c-bb5b-b4df0716be77",
+        "notificationName": "Loan Approval Transaction1752657023974",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": null,
+        "templateName": "",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-07-16T09:10:26.113923",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "148f1b16-d2a9-48e3-a17c-0f1056855d33",
+        "notificationName": "Loan Approval Transaction1752657404611",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": null,
+        "templateName": "",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-07-16T09:16:47.477047",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "67561ace-bc85-4138-9de9-67b10860db38",
+        "notificationName": "Loan Approval Transaction113",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": null,
+        "templateName": "",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-07-16T09:16:52.293748",
+        "createdBy": "01948dff-08ab-7ffb-9138-57bfb790d68e"
+    },
+    {
+        "id": "a937ad60-5d0f-47a6-9290-9984aadadcfe",
+        "notificationName": "Loan Approval Transaction1752657479361",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": "7460e8a4-7dc6-45db-9046-bcbb365192eb",
+        "templateName": "IMP Loan Application is Underwritter reopen resubmitted - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-07-16T09:18:02.311874",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "a711a403-1810-4151-89e3-fbba8b74bad1",
+        "notificationName": "Loan Approval Transaction1752657507693",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": "7460e8a4-7dc6-45db-9046-bcbb365192eb",
+        "templateName": "IMP Loan Application is Underwritter reopen resubmitted - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 4,
+        "statusName": "Published",
+        "createdOn": "2025-07-16T09:18:30.097543",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "b20ed614-cf69-4839-a046-0602ce0b7685",
+        "notificationName": "Loan Approval Transaction1752657806244",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": "7460e8a4-7dc6-45db-9046-bcbb365192eb",
+        "templateName": "IMP Loan Application is Underwritter reopen resubmitted - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-07-16T09:23:29.087278",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "d792945f-9eb3-492a-bbbc-a72906680fb8",
+        "notificationName": "Loan Approval Transaction1752657878875",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": "7460e8a4-7dc6-45db-9046-bcbb365192eb",
+        "templateName": "IMP Loan Application is Underwritter reopen resubmitted - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 4,
+        "statusName": "Published",
+        "createdOn": "2025-07-16T09:24:41.569266",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "8a58d41f-c036-48e2-a33f-1e1eab9b95a2",
+        "notificationName": "Loan Approval Transaction1752657948494",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": "7460e8a4-7dc6-45db-9046-bcbb365192eb",
+        "templateName": "IMP Loan Application is Underwritter reopen resubmitted - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 4,
+        "statusName": "Published",
+        "createdOn": "2025-07-16T09:25:51.321044",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "dd537f21-eec2-4cca-876c-1e9d628f8057",
+        "notificationName": "Loan Approval Transaction1752658024716",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": "7460e8a4-7dc6-45db-9046-bcbb365192eb",
+        "templateName": "IMP Loan Application is Underwritter reopen resubmitted - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 4,
+        "statusName": "Published",
+        "createdOn": "2025-07-16T09:27:07.422646",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "9e044677-e2e5-4783-9552-0cd5ee31f45a",
+        "notificationName": "Loan Approval Transaction114",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": null,
+        "templateName": "",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-07-16T09:35:32.157247",
+        "createdBy": "01948dff-08ab-7ffb-9138-57bfb790d68e"
+    },
+    {
+        "id": "68338093-2252-4bb8-ba11-9e59e6ae56d1",
+        "notificationName": "Loan Approval Transaction115",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": null,
+        "templateName": "",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-07-16T09:35:56.867229",
+        "createdBy": "01948dff-08ab-7ffb-9138-57bfb790d68e"
+    },
+    {
+        "id": "5b0a2dd3-0360-4e07-b8b6-3c706df80d18",
+        "notificationName": "Loan Approval Transaction1152",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": null,
+        "templateName": "",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-07-16T09:49:31.731785",
+        "createdBy": "01948dff-08ab-7ffb-9138-57bfb790d68e"
+    },
+    {
+        "id": "d4092026-2437-4138-90f6-81539b1d8001",
+        "notificationName": "Loan Approval Transaction1154",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": null,
+        "templateName": "",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-07-16T09:55:10.709771",
+        "createdBy": "01948dff-08ab-7ffb-9138-57bfb790d68e"
+    },
+    {
+        "id": "bc58b6b2-048d-4149-9389-2d2ad8b80739",
+        "notificationName": "Loan Approval Transaction1752659947200",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": "7460e8a4-7dc6-45db-9046-bcbb365192eb",
+        "templateName": "IMP Loan Application is Underwritter reopen resubmitted - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 4,
+        "statusName": "Published",
+        "createdOn": "2025-07-16T09:59:09.936867",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "84025635-efae-44f4-9109-81586c9b7071",
+        "notificationName": "Loan Approval Transaction1752660574280",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": "7460e8a4-7dc6-45db-9046-bcbb365192eb",
+        "templateName": "IMP Loan Application is Underwritter reopen resubmitted - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 4,
+        "statusName": "Published",
+        "createdOn": "2025-07-16T10:09:37.345838",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "f65d2179-d95c-42a0-8d74-2a80acc42b2a",
+        "notificationName": "Loan Approval Transaction1113",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": null,
+        "templateName": "",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-07-16T10:14:04.859289",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "986484ba-06a8-4263-9ca2-98a5c5fae9be",
+        "notificationName": "Loan Approval Transaction1123",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": null,
+        "templateName": "",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-07-16T10:17:19.43647",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "ca947df1-51b3-42d3-8901-3c668d6ad034",
+        "notificationName": "Loan Approval Transaction1155",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": null,
+        "templateName": "",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-07-16T10:23:55.229506",
+        "createdBy": "01948dff-08ab-7ffb-9138-57bfb790d68e"
+    },
+    {
+        "id": "5a13cbcb-8572-462e-9d15-b58c416f0edf",
+        "notificationName": "Loan Approval Transaction QAcf62246e",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": null,
+        "templateName": "",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-07-16T10:50:08.402896",
+        "createdBy": "01948dff-08ab-7ffb-9138-57bfb790d68e"
+    },
+    {
+        "id": "7f34172d-0041-47a9-98cf-8c578ea3db84",
+        "notificationName": "Authentication  Notification Transaction",
+        "moduleId": "e26e17da-b1e8-4be9-a954-536f4b2be2a2",
+        "templateId": "3ba388c7-2692-46ed-b3b2-e39639cfdf21",
+        "templateName": "Authentication OTP Template - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a20",
+                "channelName": "SMS",
+                "valueInfo": "",
+                "description": "This template will be used for sending SMS notifications."
+            }
+        ],
+        "statusId": 4,
+        "statusName": "Published",
+        "createdOn": "2025-07-16T11:49:06.569394",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "88016a21-22dd-45cb-aa3a-ffe6612b6d75",
+        "notificationName": "Loan Approval Transaction1752667766981",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": "7460e8a4-7dc6-45db-9046-bcbb365192eb",
+        "templateName": "IMP Loan Application is Underwritter reopen resubmitted - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-07-16T12:09:29.264226",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "a515ae4c-1f2e-4d2a-a917-db68ef5910da",
+        "notificationName": "Authentication Notification v2",
+        "moduleId": "e26e17da-b1e8-4be9-a954-536f4b2be2a2",
+        "templateId": "a0d96703-32b9-4e83-96da-2623bb475a85",
+        "templateName": "Authentication Notification v2 - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            },
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a20",
+                "channelName": "SMS",
+                "valueInfo": "",
+                "description": "This template will be used for sending SMS notifications."
+            }
+        ],
+        "statusId": 4,
+        "statusName": "Published",
+        "createdOn": "2025-07-18T05:16:46.879153",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "7fcc44f5-9550-4a51-b9d8-4a0c63835aba",
+        "notificationName": "Authentication Notification v3",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": "c52e4299-8419-474f-8b23-2f67ea0a29eb",
+        "templateName": "Authentication Notification Template - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            }
+        ],
+        "statusId": 4,
+        "statusName": "Published",
+        "createdOn": "2025-07-18T09:06:22.608202",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "74d15b27-5370-4a72-a05c-e118e2b9997f",
+        "notificationName": "Loan 21 M",
+        "moduleId": "13d663e9-c464-4177-b75c-7689509e6c0d",
+        "templateId": null,
+        "templateName": "",
+        "channels": [
+            
+        ],
+        "statusId": 1,
+        "statusName": "Draft",
+        "createdOn": "2025-07-17T10:24:55.739596",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    },
+    {
+        "id": "571bb10a-7da4-4fcf-9a5c-a681a4e6f56d",
+        "notificationName": "Loan Approval Transaction 18",
+        "moduleId": "842e9cd6-7014-4c04-a241-59142ca001b4",
+        "templateId": "5d209706-afe6-4f17-8ecb-cfa24cb0426c",
+        "templateName": "Your Loan Application is Under Final Review - Internal",
+        "channels": [
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a19",
+                "channelName": "Email",
+                "valueInfo": "",
+                "description": "This template will be used for sending Email notifications."
+            },
+            {
+                "channelId": "8542532c-8232-48a5-85c7-ed42dd0c3a20",
+                "channelName": "SMS",
+                "valueInfo": "",
+                "description": "This template will be used for sending SMS notifications."
+            }
+        ],
+        "statusId": 4,
+        "statusName": "Published",
+        "createdOn": "2025-07-18T04:32:09.272944",
+        "createdBy": "01948dff-034e-77bf-a093-a2846fb9ae4d"
+    }
+]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>11:56:58 AM</td>
+        <td>
+          Fetched all notifications
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>11:56:58 AM</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
       </ul>
     </div>
   </div>
@@ -82,30 +2359,79 @@
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="container-fluid p-4 view dashboard-view">
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">java.lang.AssertionError</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.AssertionError</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>11:56:54 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>TC01: Create Transactional Notification</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
 <div class="row">
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Jul 17, 2025 01:37:35 PM</h3>
+<h3>Jul 21, 2025 11:56:52 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Jul 17, 2025 01:37:58 PM</h3>
+<h3>Jul 21, 2025 11:56:58 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>0</h3>
+<h3>1</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>0</h3>
+<h3>1</h3>
 </div></div>
 </div>
 </div>
@@ -121,13 +2447,33 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='0%'>
-<b>0</b> tests passed
+<div><small data-tooltip='50%'>
+<b>1</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> tests failed,
+<small data-tooltip='50%'><b>1</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='14%'><b>1</b> events passed</small></div>
+<div>
+<small data-tooltip='14%'><b>1</b> events failed,
+<b data-tooltip='%'>5</b> others
 </small>
 </div>
 </div>
@@ -143,6 +2489,7 @@
 </div></div>
 <script>
 var timeline = {
+"TC01: Create Transactional Notification":3.56,"TC04: Get All Notifications":0.288
 };
 </script>
 <div class="row">
@@ -169,8 +2516,8 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 0,
-failParent: 0,
+passParent: 1,
+failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
@@ -186,11 +2533,11 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 0,
-failEvents: 0,
+passEvents: 1,
+failEvents: 1,
 warningEvents: 0,
 skipEvents: 0,
-infoEvents: 0
+infoEvents: 5
 };
 </script>        </div>
       </div>
