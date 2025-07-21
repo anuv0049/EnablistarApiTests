@@ -38,15 +38,16 @@ public class NotificationMethods {
                 .log().all()
                 .extract()
                 .response();
+        ExtentTestManager.getTest().info("API link: " + notificationBuilderEndpoints.NOTIFICATION_BASE_URL+notificationBuilderEndpoints.createTransactionMasterAPI);
+
         ExtentTestManager.getTest().info("Response: " + response.asPrettyString());
-        System.out.println("RESPONSE STATUS: " + response.getStatusCode());
+         System.out.println("RESPONSE STATUS: " + response.getStatusCode());
         System.out.println("RESPONSE BODY: " + response.getBody().asString());
         return response;
     }
     // Get Notification by ID
     public Response getNotificationById(String token, String notificationId) {
-        String url = notificationBuilderEndpoints.NOTIFICATION_BASE_URL +
-                notificationBuilderEndpoints.getTransactionByIdAPI  + notificationId;
+        String url = notificationBuilderEndpoints.NOTIFICATION_BASE_URL+notificationBuilderEndpoints.getTransactionByIdAPI+notificationId;
 
         ExtentTestManager.getTest().info("Fetching notification with ID: " + notificationId);
 
@@ -59,6 +60,7 @@ public class NotificationMethods {
                 .extract()
                 .response();
 
+        ExtentTestManager.getTest().info("API link: " + url);
         ExtentTestManager.getTest().info("Response: " + response.asPrettyString());
         return response;
     }
@@ -77,15 +79,14 @@ public class NotificationMethods {
                 .then()
                 .extract()
                 .response();
-
+        ExtentTestManager.getTest().info("API link: " + url);
         ExtentTestManager.getTest().info("Response: " + response.asPrettyString());
         return response;
     }
 
     // Publish Notification (if applicable)
     public Response publish(String token, String notificationId) {
-        String url = notificationBuilderEndpoints.NOTIFICATION_BASE_URL +
-                "/notifications/publish/" + notificationId;
+        String url = notificationBuilderEndpoints.NOTIFICATION_BASE_URL +notificationBuilderEndpoints.publish+ notificationId;
 
         ExtentTestManager.getTest().info("Publishing notification with ID: " + notificationId);
 
@@ -96,7 +97,7 @@ public class NotificationMethods {
                 .then()
                 .extract()
                 .response();
-
+        ExtentTestManager.getTest().info("API link: " + url);
         ExtentTestManager.getTest().info("Response: " + response.asPrettyString());
         return response;
     }

@@ -13,7 +13,7 @@ public class NotificationTests extends BaseClass {
 
 
     NotificationMethods notificationMethods = new NotificationMethods();
-    String recentNotificationID = "";
+    private static String recentNotificationID = "";
     String token = ConfigManager.getProperty("notificationAuthToken");
     String moduleId = "842e9cd6-7014-4c04-a241-59142ca001b4";
 
@@ -25,6 +25,7 @@ public class NotificationTests extends BaseClass {
         Assert.assertEquals(response.getStatusCode(), 200, "Expected status code 200 on creation");
         recentNotificationID = response.asString().replace("\"", "").trim();
         ExtentTestManager.getTest().info("Created notification ID: " + recentNotificationID);
+
         Assert.assertNotNull(recentNotificationID, "Notification ID should not be null");
 
 
