@@ -23,7 +23,7 @@ public class NotificationTests extends BaseClass {
         Response response = notificationMethods.createTransactionalNotification(token);
 
         Assert.assertEquals(response.getStatusCode(), 200, "Expected status code 200 on creation");
-        recentNotificationID = response.jsonPath().getString("id"); // adjust key if needed
+        recentNotificationID = response.asString().replace("\"", "").trim();
         ExtentTestManager.getTest().info("Created notification ID: " + recentNotificationID);
         Assert.assertNotNull(recentNotificationID, "Notification ID should not be null");
 

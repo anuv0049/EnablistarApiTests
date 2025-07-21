@@ -15,7 +15,7 @@ public class NotificationMethods {
     public Response createTransactionalNotification(String token) {
 
         String moduleId = "842e9cd6-7014-4c04-a241-59142ca001b4";
-        String name = "Loan Approval QA - " + UUID.randomUUID().toString().substring(0, 8);
+        String name = "Loan Approval QA  " + UUID.randomUUID().toString().substring(0, 8);
         String description = "Generated at " + System.currentTimeMillis();
         Map<String, Object> payload = new HashMap<>();
         payload.put("notificationName", name);
