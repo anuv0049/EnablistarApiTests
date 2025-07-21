@@ -15,7 +15,6 @@ public class NotificationTests extends BaseClass {
     NotificationMethods notificationMethods = new NotificationMethods();
     private static String recentNotificationID = "";
     String token = ConfigManager.getProperty("notificationAuthToken");
-    String moduleId = "842e9cd6-7014-4c04-a241-59142ca001b4";
 
     @Test(priority = 1, testName = "TC01: Create Transactional Notification")
     public void createTransactionalNotificationTest() {
